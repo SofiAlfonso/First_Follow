@@ -44,7 +44,7 @@ grammar.print_first_and_follow()
  Follow(A) = {b, c}
  Follow(B) = {c, $}
 ```
-#Features
+# Features
 
 1. Calculate First sets: The project computes First sets for context-free grammars, crucial for predicting symbols in parsing algorithms like LL and LR parsers. It's based on established algorithms, ensuring accurate results.
 2. Calculate Follow sets: The project also computes Follow sets, essential for predictive parsing methods such as LL(1) parsing. Follow sets aid in constructing parsing tables and resolving parsing conflicts.
