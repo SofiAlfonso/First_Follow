@@ -18,9 +18,15 @@ This Python project, developed by David Ramírez and Ana Sofía Alfonso, helps u
 # Usage
 Instructions on how to use the project to compute First and Follow sets.
 
-run command: python "main.py"
+Run command: python "main.py"
 
-advertisement: when you run more than one grammar, you need to click enter when the last grammar is going to give its output
+Advertisement:
+- When you run more than one grammar, you need to click enter when the last grammar is going to give its output
+- e represents epsilon
+- $ this symbol is not allow on the input
+-  First simbols are nonterminals, right side reprents the productions
+- The program only reads nonterminals in uppercase and terminals in lowcase
+
 
 When prompted, enter the number of cases, the number of nonterminals, and the productions in the following format:
 
@@ -28,7 +34,7 @@ When prompted, enter the number of cases, the number of nonterminals, and the pr
 1
 3
 S AB
-A aBc  ε
+A aBc  e
 B b
 ```
 # Expected output
