@@ -3,38 +3,34 @@ This project was created by David Ramírez and Ana Sofía Alfonso.    A Python p
 
 # Table of Contents
 - Introduction
+- Espesifications
 - Usage
 - Examples
 - Features
 
 # Introduction
-
 This Python project, developed by David Ramírez and Ana Sofía Alfonso, helps users compute First and Follow sets for context-free grammars. It's handy for students and pros working on compiler design and syntax analysis. It's a great tool for grasping grammars, creating parsing methods, and improving compilers.
+
+# Especifications
+- Language: Python 3.10
+- IDE: PyCharm 2023.1.4
 
 # Usage
 Instructions on how to use the project to compute First and Follow sets.
 
-python "main.py"
+run command: python "main.py"
+
+advertisement: when you run more than one grammar, you need to click enter when the last grammar is going to give its output
+
 When prompted, enter the number of cases, the number of nonterminals, and the productions in the following format:
 
-#### Enter the number of cases: 1
-#### Enter the number of nonterminals: 3
 ```
-- S -> A B
-- A -> a B c | ε
-- B -> b
+1
+3
+S AB
+A aBc  ε
+B b
 ```
-# Example of grammar input
-```
-grammar = Grammar()
-grammar.add_production('S', 'A B')
-grammar.add_production('A', 'a B c | ε')
-grammar.add_production('B', 'b')
-grammar.compute_first()
-grammar.compute_follow()
-grammar.print_first_and_follow()
-```
-
 # Expected output
 ```
  First(S) = {a, b, ε}
