@@ -1,7 +1,9 @@
 """
 Program: FIRST and FOLLOW implementation for final project of Formal languages and compilers - EAFIT 2024-1
 Authors: David Alejandro Ramírez Agudelo and Ana Sofia Alfonso Moncada
+Professor: Sergio Steven Ramírez Rico
 Date: 28/05/24
+
 """
 #imports
 import Grammar
@@ -28,13 +30,17 @@ def searchTerminals(G):
       for a in p:
          for b in a:
             if (b not in terminals) and (b not in nonterminals) and (b.islower()) and (b!='e'):
-              terminals.append(b)
+               if (b!='$'):
+                  terminals.append(b)
+               else:
+                  print("El simbolo $ no está permitido en la gramática.")
+                  sys.exit(1)
    G.terminals = terminals
 
 #Reads the grammar input
 def readInput():
    n_cases = int(input())  # Number of grammars to analize
-   for _ in range(n_cases):
+   for _ in range(0,n_cases,1):
       n_nterminals = int(input())  # Number of nonterminals of the grammar
       j=0
       productions={}
@@ -52,7 +58,7 @@ def readInput():
       searchNonterminals(G)
       searchTerminals(G)
       G.computeFirst()
-      #G.computeFollow()
+      G.computeFollow()
       G.printSolution()  # Prints the first and follow solution
 
 
