@@ -9,21 +9,22 @@ class Grammar:
         self.initial
 
     def rule2(self):
-        for N in self.nonterminals:
-            for a in self.productions[N]:
-                for b in a:
-                    long=len(b)
-                    cont=0
-                    if b in self.terminals:
-                        break
-                    elif b in self.nonterminals:
-                        for c in self.first[b]:
-                            if c != 'e':
-                                self.first[N].append(c)
-                        if 'e' in self.first[b]:
-                            cont+=1
-                    
-
+        for d in range(1,len(self.nonterminals),1):
+            for N in self.nonterminals:
+                for a in self.productions[N]:
+                    long = len(b)
+                    cont = 0
+                    for b in a:
+                        if b in self.terminals:
+                            break
+                        elif b in self.nonterminals:
+                            for c in self.first[b]:
+                                if (c != 'e') and (c not in self.first[N]):
+                                    self.first[N].append(c)
+                            if 'e' in self.first[b]:
+                                cont+=1
+                    if long==cont:
+                        self.first[N].append('e')
 
 
 
@@ -36,7 +37,7 @@ class Grammar:
 
             for a in self.productions[N]:
                 for b in a:
-                    if b in self.terminals:  # Rule 1
+                    if b in self.terminals and b not in self.first[N]:  # Rule 1
                         self.first[N].append(b)
                         break
 
