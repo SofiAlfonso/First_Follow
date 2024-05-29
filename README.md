@@ -39,12 +39,12 @@ B b
 ```
 # Expected output
 ```
- First(S) = {a, b, ε}
- First(A) = {a, ε}
- First(B) = {b}
- Follow(S) = {$}
- Follow(A) = {b, c}
- Follow(B) = {c, $}
+ First(S): {a, b, ε}
+ First(A): {a, ε}
+ First(B): {b}
+ Follow(S): {$}
+ Follow(A): {b, c}
+ Follow(B): {c, $}
 ```
 # Features
 
