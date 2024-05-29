@@ -27,7 +27,7 @@ def searchTerminals(G):
       p=productions[i]
       for a in p:
          for b in a:
-            if (b not in terminals) and (b not in nonterminals) and b.islower():
+            if (b not in terminals) and (b not in nonterminals) and (b.islower()) and (b!='e'):
               terminals.append(b)
    G.terminals = terminals
 
@@ -47,10 +47,12 @@ def readInput():
       G = Grammar.Grammar()  # Creation of the grammar to analize
       G.productions = productions
       G.initial ='S'
+      G.first={}
+      G.follow={}
       searchNonterminals(G)
       searchTerminals(G)
       G.computeFirst()
-      G.computeFollow()
+      #G.computeFollow()
       G.printSolution()  # Prints the first and follow solution
 
 
